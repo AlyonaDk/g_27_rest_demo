@@ -4,6 +4,7 @@ import de.aittr.g_27_rest_demo.domain.Cat;
 import de.aittr.g_27_rest_demo.repositories.CatRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 @Service
 
@@ -26,7 +27,7 @@ public class CatService implements AppService<Cat> {
 
     @Override
     public List<Cat> getAll() {
-        return null;
+        return new ArrayList<>(repository.getAll());
     }
 
     @Override
