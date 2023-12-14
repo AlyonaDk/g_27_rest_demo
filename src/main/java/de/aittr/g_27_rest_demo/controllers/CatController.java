@@ -3,10 +3,7 @@ package de.aittr.g_27_rest_demo.controllers;
 import de.aittr.g_27_rest_demo.domain.Cat;
 import de.aittr.g_27_rest_demo.domain.SimpleCat;
 import de.aittr.g_27_rest_demo.services.CatService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,7 +19,7 @@ public class CatController {
     public List<Cat> getAll() {
         return service.getAll();
     }
-    @GetMapping("/save")
+    @PostMapping("/save")
     public Cat save(@RequestBody SimpleCat cat) {
         return service.save(cat);
     }
